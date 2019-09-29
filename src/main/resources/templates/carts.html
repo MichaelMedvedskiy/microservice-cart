@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:each="ass: ${carts}">
+    <button th:text="${ass}"></button>
+    <h1 th:each="item : ${ass.getItems()}">
+        <h2 th:text="${item}"></h2>
+    </h1>
+</h1>
+</body>
+</html>
