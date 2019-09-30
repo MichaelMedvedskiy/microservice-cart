@@ -13,25 +13,25 @@ public class Cart {
 
 
     @OneToMany(cascade = {CascadeType.ALL})
-    private List<Item> items;
+    private List<ItemClass> itemClasses;
 
     public Cart() {
     }
 
 
 
-    public void addItem(Item item){
-        items.add(item);
+    public void addItem(ItemClass itemClass){
+        itemClasses.add(itemClass);
     }
 
 
-    public void removeItem(Item item){
-        items.remove(item);
+    public void removeItem(ItemClass itemClass){
+        itemClasses.remove(itemClass);
     }
 
 
     public void flushCart(){
-        items.clear();
+        itemClasses.clear();
     }
 
     public Long getId() {
@@ -42,12 +42,12 @@ public class Cart {
         this.id = id;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<ItemClass> getItemClasses() {
+        return itemClasses;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setItemClasses(List<ItemClass> itemClasses) {
+        this.itemClasses = itemClasses;
     }
 
     @Override
@@ -56,19 +56,19 @@ public class Cart {
         if (!(o instanceof Cart)) return false;
         Cart cart = (Cart) o;
         return Objects.equals(id, cart.id) &&
-                Objects.equals(items, cart.items);
+                Objects.equals(itemClasses, cart.itemClasses);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, items);
+        return Objects.hash(id, itemClasses);
     }
 
     @Override
     public String toString() {
         return "Cart{" +
                 "id=" + id +
-                ", items=" + items +
+                ", itemClasses=" + itemClasses +
                 '}';
     }
 }

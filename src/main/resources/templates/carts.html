@@ -8,8 +8,8 @@
 <body>
 <h1 th:each="ass: ${carts}">
     <button th:text="${ass}"></button>
-    <h1 th:each="item : ${ass.getItems()}">
-        <h2 th:text="${item}"></h2>
+    <h1 th:each="itemClass : ${ass.getItemClasses()}">
+        <h2 th:text="${itemClass}"></h2>
     </h1>
 </h1>
 </body>
